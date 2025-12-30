@@ -1,0 +1,47 @@
+Relatório Técnico: Desenvolvimento de API para Gestão de Clientes
+
+1. Introdução
+Este projeto acadêmico descreve o desenvolvimento de uma API (Application Programming Interface) dedicada ao gerenciamento de clientes. A solução utiliza a linguagem Python e o framework Django, integrando uma infraestrutura de servidor local e ferramentas de monitoramento para garantir um fluxo de dados eficiente e seguro.
+
+
+2. Tecnologias e Infraestrutura
+A arquitetura do projeto foi estruturada sobre pilares que garantem o isolamento e a estabilidade do sistema:
+
+Ambiente Virtual (venv): Utilizado para a segregação das dependências do projeto, evitando conflitos entre bibliotecas e assegurando a replicabilidade do software.
+
+Django Framework: Atua como o núcleo da aplicação, gerenciando as rotas, a lógica de negócio e a interação com o banco de dados através de seu sistema de mapeamento objeto-relacional (ORM).
+
+XAMPP (Apache e MySQL): O XAMPP provê o servidor de banco de dados MySQL, onde as informações dos clientes são armazenadas de forma estruturada.
+
+
+3. Métodos HTTP e Manipulação de Dados
+A API foi projetada para responder a diferentes tipos de requisições, permitindo a comunicação completa com a interface de cliente:
+
+Método POST: Responsável pelo envio de novos dados da interface para o servidor, realizando o cadastro de novos clientes no banco de dados.
+
+Método GET: Essencial para a recuperação de informações. Através deste método, a API consulta o banco de dados MySQL e retorna os dados dos clientes para que possam ser visualizados na tela, permitindo consultas específicas ou listagens gerais.
+
+Testes de Endpoints: O Postman e o Thunder Client (extensão do VS Code) foram utilizados para simular essas requisições, validando se o envio (POST) e a busca (GET) de dados estavam operando conforme o esperado.
+
+
+4. Monitoramento via phpMyAdmin
+O phpMyAdmin desempenha um papel crucial na auditoria do projeto. Ele oferece uma interface gráfica para o MySQL, permitindo que o desenvolvedor acompanhe a persistência dos dados:
+
+Validação do POST: Ao cadastrar um cliente, o registro é verificado instantaneamente nas tabelas do phpMyAdmin.
+
+Validação do GET: Antes de buscar um dado via API, o desenvolvedor pode confirmar no phpMyAdmin quais informações estão disponíveis, garantindo que o retorno da API seja fidedigno ao que está armazenado.
+
+
+5. Fluxo de Operação Final
+O fluxo de trabalho consolidado segue a seguinte hierarquia:
+
+Solicitação: A tela do cliente (ou ferramenta de teste) solicita uma ação (cadastrar ou listar).
+
+Processamento: O Django interpreta a requisição dentro do venv.
+
+Persistência/Consulta: O Django comunica-se com o MySQL no XAMPP.
+
+Verificação: O desenvolvedor utiliza o phpMyAdmin para auditar a saúde e a integridade do banco de dados.
+
+
+A integração destas ferramentas proporciona uma compreensão profunda sobre o ciclo de vida dos dados em uma aplicação moderna, desde a requisição inicial até o armazenamento definitivo e sua posterior recuperação para o usuário final.
